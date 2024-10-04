@@ -17,7 +17,7 @@
   "dependencies": {
     "@bugsnag/js": "^7.25.0",
     "@bugsnag/plugin-react": "^7.25.0",
-    "@chakra-ui/next-js": "^2.2.0",
+    "@chakra-ui/next-js": "^2.3.4",
     "@chakra-ui/react": "^2.8.2",
     "@devil7softwares/react-drifter-stars": "^1.0.6",
     "@emotion/react": "^11.11.4",
@@ -30,7 +30,7 @@
     "i18n-js": "^4.4.3",
     "lottie-react": "^2.4.0",
     "mixpanel-browser": "^2.53.0",
-    "next": "14.2.4",
+    "next": "14.2.9",
     "next-themes": "^0.3.0",
     "react": "^18",
     "react-animated-numbers": "^0.18.0",

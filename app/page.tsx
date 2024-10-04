@@ -7,8 +7,18 @@ import PageContainer from '@/components/PageContainer';
 import { Routes } from '@/constants/routes';
 import { i18n } from '@/services/localization';
 import { useStore } from '@/zustand/store';
-import { Box, Center, Flex, Heading, Stack, Text } from '@chakra-ui/layout';
-import { Avatar, Button, Icon, useColorModeValue } from '@chakra-ui/react';
+import {
+  Avatar,
+  Box,
+  Button,
+  Center,
+  Flex,
+  Heading,
+  Icon,
+  Stack,
+  Text,
+  useColorModeValue
+} from '@chakra-ui/react';
 import Lottie from 'lottie-react';
 import dynamic from 'next/dynamic';
 import { useRouter } from 'next/navigation';

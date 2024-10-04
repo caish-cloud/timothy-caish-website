@@ -8,10 +8,19 @@ import AnimatedPressIn from '@/components/animation/AnimatedPressIn';
 import { Routes } from '@/constants/routes';
 import { i18n } from '@/services/localization';
 import { useStore } from '@/zustand/store';
-import { useColorMode } from '@chakra-ui/color-mode';
-import { Box, Container, Divider, Flex, Spacer } from '@chakra-ui/layout';
 import { Image, Link } from '@chakra-ui/next-js';
-import { Icon, Text, useColorModeValue, useDisclosure } from '@chakra-ui/react';
+import {
+  Box,
+  Container,
+  Divider,
+  Flex,
+  Icon,
+  Spacer,
+  Text,
+  useColorMode,
+  useColorModeValue,
+  useDisclosure
+} from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 import { useTheme } from 'next-themes';
 import React from 'react';
