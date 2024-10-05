@@ -5,4 +5,4 @@ export interface MotionBoxProps
   extends HTMLMotionProps<'div'>,
     Omit<ChakraProps, 'transition' | 'color'> {}
 
-export const MotionBox = motion(chakra.div);
+export const MotionBox = motion(chakra.div as any);
