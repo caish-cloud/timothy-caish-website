@@ -94,7 +94,7 @@ export default function BusinessCard(props: BusinessCardProps) {
         businessCardX.set(0);
         businessCardY.set(0);
       }}
-      onMouseMove={(e) => handleOnMouseMove(e)}
+      onMouseMove={(e: MouseEvent<HTMLDivElement>) => handleOnMouseMove(e)}
       ref={businessCardRef}
       style={{
         boxShadow:
