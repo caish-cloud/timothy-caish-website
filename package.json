@@ -3,16 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "next dev",
     "build": "next build",
-    "prod": "next start",
-    "lint": "next lint",
     "deploy": "npx vercel --prod",
-    "supabase-start": "npx supabase start && npx supabase functions serve --env-file ./supabase/.env",
-    "supabase-stop": "npx supabase stop",
-    "supabase-status": "npx supabase status",
+    "lint": "next lint",
+    "prod": "next start",
+    "start": "next dev",
     "supabase-deploy": "npx supabase secrets set --env-file ./supabase/.env && npx supabase functions deploy",
-    "supabase-deploy-all": "npx supabase secrets set --env-file ./supabase/.env && npx supabase functions deploy --debug"
+    "supabase-deploy-all": "npx supabase secrets set --env-file ./supabase/.env && npx supabase functions deploy --debug",
+    "supabase-start": "npx supabase start && npx supabase functions serve --env-file ./supabase/.env",
+    "supabase-status": "npx supabase status",
+    "supabase-stop": "npx supabase stop"
   },
   "dependencies": {
     "@bugsnag/js": "^7.25.0",
@@ -30,7 +30,7 @@
     "i18n-js": "^4.4.3",
     "lottie-react": "^2.4.0",
     "mixpanel-browser": "^2.53.0",
-    "next": "14.2.9",
+    "next": "^14.2.10",
     "next-themes": "^0.3.0",
     "react": "^18",
     "react-animated-numbers": "^0.18.0",
