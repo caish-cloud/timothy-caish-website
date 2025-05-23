@@ -13,7 +13,6 @@
   "can_integrate_with_aws": "can integrate with AWS",
   "can_integrate_with_firebase": "can integrate with Firebase",
   "can_integrate_with_supabase": "can integrate with Supabase",
-  "chakra_ui_desc": "Chakra UI is a modern, accessible, and simple-to-use React UI library that provides a set of reusable and composable React components. It aims to make it easier for developers to build beautiful, responsive, and accessible user interfaces for their web applications. Chakra UI is designed with accessibility in mind, ensuring that applications built with it are accessible to as wide an audience as possible, including people with disabilities.",
   "chinese": "Chinese",
   "close": "Close",
   "coding_stats_disclaimer": "The data on this page comes from my Wakatime profile and is updated daily. The statistics here only show the coding activity tracked by Wakatime, which started tracking in 2023 and may not include all the coding I do. This is only for fun and to show where I spend most of my time, so take it with a grain of salt!",
@@ -68,6 +67,7 @@
   },
   "portuguese": "Portuguese",
   "postgresql_desc": "PostgreSQL, often simply Postgres, is an advanced, open-source object-relational database system known for its reliability, robustness, and performance, especially when managing complex data workloads. PostgreSQL has been developed and improved over more than 30 years of engineering, boasting a strong reputation for its architecture, data integrity, and extensive feature set.",
+  "python_desc": "Python is a high-level, interpreted programming language known for its readability and versatility. It supports multiple programming paradigms, including procedural, object-oriented, and functional programming. Python is widely used in various fields, including web development, data analysis, artificial intelligence, scientific computing, and more. Its extensive standard library and active community contribute to its popularity among developers.",
   "react_desc": "React is a JavaScript library for building fast and interactive user interfaces for web applications. It is component-based, allowing developers to create large web applications that can change data, without reloading the page. React Native extends React's approach to mobile app development. Unlike tools that generate mobile app versions of a web app through webviews, React Native produces truly native apps for both Android and iOS platforms. It uses the same design as React, letting you compose a rich mobile UI from declarative components. With React Native, you write your UI using JavaScript and React, but the framework translates your components into platform-native components, allowing your app to access and use native platform capabilities.",
   "released": "Released",
   "routes": {

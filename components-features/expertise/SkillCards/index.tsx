@@ -36,14 +36,6 @@ export default function SkillCards() {
       title: 'Django'
     },
     {
-      alt: 'Chakra UI Logo',
-      color: 'rgba(94, 201, 201, 0.5)',
-      description: i18n.t('chakra_ui_desc'),
-      link: 'https://chakra-ui.com/',
-      source: '/assets/brands/chakra_ui_logo.png',
-      title: 'Chakra UI'
-    },
-    {
       alt: 'Expo Logo',
       color: 'rgba(45, 55, 72, 0.5)',
       description: i18n.t('expo_desc'),
@@ -82,6 +74,14 @@ export default function SkillCards() {
       link: 'https://www.postgresql.org/',
       source: '/assets/brands/postgresql_logo.png',
       title: 'PostgreSQL'
+    },
+    {
+      alt: 'Python Logo',
+      color: 'rgba(247, 215, 83, 0.5)',
+      description: i18n.t('python_desc'),
+      link: 'https://www.python.org/',
+      source: '/assets/brands/python_logo.png',
+      title: 'Python'
     },
     {
       alt: 'React/React Native Logo',
