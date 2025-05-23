@@ -9,6 +9,7 @@ import { getPortfolioItems } from '@/services/supabase-database/getters/portfoli
 import { useStore } from '@/zustand/store';
 import { Center, SimpleGrid } from '@chakra-ui/react';
 import React from 'react';
+import {i18n} from "@/services/localization";
 
 export default function Portfolio() {
   const store = useStore();
@@ -67,7 +68,13 @@ export default function Portfolio() {
 
   return (
     <PageContainer>
-      <Center flex={1} px={{ base: 2, sm: 4 }} py={4}>
+      <Center flex={1} flexDirection='column' gap={4} px={{ base: 2, sm: 4 }} py={4}>
+        {!isLoading && store.portfolioItems.length !== 0 && (
+            <p>
+              {i18n.t('portfolio_disclaimer')}
+            </p>
+        )}
+
         <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={4}>
           {isLoading && (
             <React.Fragment>

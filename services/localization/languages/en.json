@@ -65,6 +65,7 @@
     "id-3": "This is a game that made an appearance on the children's show, Peppa Pig. The goal is to lay as many eggs as you can!",
     "id-4": "The Village is a dedicated social media app designed exclusively for parents and caretakers, providing a supportive and engaging community where they can connect, share experiences, and find valuable resources for their parenting journey."
   },
+  "portfolio_disclaimer": "Disclaimer: The portfolio items listed here are not necessarily the most recent projects I have worked on, and they may or may not be fully up-to-date or active.",
   "portuguese": "Portuguese",
   "postgresql_desc": "PostgreSQL, often simply Postgres, is an advanced, open-source object-relational database system known for its reliability, robustness, and performance, especially when managing complex data workloads. PostgreSQL has been developed and improved over more than 30 years of engineering, boasting a strong reputation for its architecture, data integrity, and extensive feature set.",
   "python_desc": "Python is a high-level, interpreted programming language known for its readability and versatility. It supports multiple programming paradigms, including procedural, object-oriented, and functional programming. Python is widely used in various fields, including web development, data analysis, artificial intelligence, scientific computing, and more. Its extensive standard library and active community contribute to its popularity among developers.",
