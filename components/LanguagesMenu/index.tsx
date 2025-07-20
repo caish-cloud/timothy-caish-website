@@ -39,7 +39,9 @@ export default function LanguagesMenu() {
     localStorage.setItem(LocalStorageKeys.Language, languageCode);
 
     // Update the <html /> lang attribute
-    document.getElementsByTagName('html')[0].lang = languageCode;
+    if (typeof document !== 'undefined') {
+      document.getElementsByTagName('html')[0].lang = languageCode;
+    }
   }
 
   // Create an algorithm to calculate the position of the menu items where they

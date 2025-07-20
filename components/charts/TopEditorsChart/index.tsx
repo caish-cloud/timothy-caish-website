@@ -20,9 +20,11 @@ export default function TopEditorsChart(props: TopEditorsChartProps) {
     if (!store.wakatimeStats?.data.editors || chartRef.current) return;
 
     // Create the echarts instance
-    chartRef.current = echarts.init(
-      document.getElementById('top-editors-chart')
-    );
+    if (typeof document !== 'undefined') {
+      chartRef.current = echarts.init(
+          document.getElementById('top-editors-chart')
+      );
+    }
   }, [store.wakatimeStats?.data.editors]);
 
   // Update the chart when the chart instance exists and when the color mode
