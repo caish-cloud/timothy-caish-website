@@ -1,11 +1,8 @@
 import { i18n } from '@/services/localization';
-import { useStore } from '@/zustand/store';
 import React from 'react';
 import { TypeAnimation } from 'react-type-animation';
 
 export default function CustomTypeAnimation() {
-  const store = useStore();
-
   const defaultWaitInterval = 3000;
 
   // This needs to be memoized so that it rerenders when the language changes
@@ -40,7 +37,7 @@ export default function CustomTypeAnimation() {
         speed={60}
       />
     ),
-    [store.locale]
+    []
   );
 
   return <CustomTypeAnimationMemoized />;

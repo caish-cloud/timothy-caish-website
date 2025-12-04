@@ -76,6 +76,7 @@ export function Providers(props: ProvidersProps) {
       i18n.locale = storedLanguage;
       store.setLocale(storedLanguage);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // Listen for window resize events
@@ -89,6 +90,7 @@ export function Providers(props: ProvidersProps) {
     return () => {
       window.removeEventListener('resize', handleResize);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

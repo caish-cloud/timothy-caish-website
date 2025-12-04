@@ -31,6 +31,7 @@ export default function Footer() {
     getTotalUniqueVisitors().then((totalUniqueVisitors) => {
       store.setTotalUniqueVisitors(totalUniqueVisitors);
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // Listen to realtime changes in the unique visitors table
@@ -40,6 +41,7 @@ export default function Footer() {
     return () => {
       listener.unsubscribe();
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

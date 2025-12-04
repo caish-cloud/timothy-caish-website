@@ -1,3 +1,4 @@
+import { Database } from "@/constants/types/supabase";
 import { supabaseClient } from "@/services/supabase";
 import Bugsnag from "@bugsnag/js";
 
@@ -5,7 +6,9 @@ import Bugsnag from "@bugsnag/js";
  * Gets all the portfolio items.
  * @returns All the portfolio items.
  */
-export async function getPortfolioItems() {
+export async function getPortfolioItems(): Promise<
+  Database["public"]["Tables"]["portfolio_items"]["Row"][]
+> {
   const { data, error } = await supabaseClient
     .from("portfolio_items")
     .select("*");

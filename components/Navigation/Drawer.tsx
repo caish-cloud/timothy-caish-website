@@ -14,7 +14,6 @@ import {
   DrawerOverlay,
   Flex,
   Heading,
-  useColorMode,
   useColorModeValue
 } from '@chakra-ui/react';
 
@@ -24,8 +23,9 @@ type NavigationDrawerProps = {
 };
 
 export default function NavigationDrawer(props: NavigationDrawerProps) {
-  const { colorMode } = useColorMode();
   const routes = Routes();
+
+  const headingColor = useColorModeValue('gray.700', 'gray.300');
 
   return (
     <Drawer
@@ -45,11 +45,7 @@ export default function NavigationDrawer(props: NavigationDrawerProps) {
             {Object.values(routes).map((route) => (
               <Link href={route.path} key={route.name} onClick={props.onClose}>
                 <AnimatedPressIn>
-                  <Heading
-                    color={useColorModeValue('gray.700', 'gray.300')}
-                    fontWeight="semibold"
-                    size="lg"
-                  >
+                  <Heading color={headingColor} fontWeight="semibold" size="lg">
                     {route.name}
                   </Heading>
                 </AnimatedPressIn>

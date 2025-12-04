@@ -10,16 +10,18 @@ type AnimatedBackgroundProps = {
  * Animated background component.
  */
 export default function AnimatedBackground(props: AnimatedBackgroundProps) {
+  const starColor = useColorModeValue('#0293D5', 'white');
+
   /**
    * Render the stars background with or without the fade in effect.
    */
   function renderStars() {
     return props.shouldFadeIn ? (
       <FadeIn duration={5}>
-        <DrifterStars color={useColorModeValue('#0293D5', 'white')} />
+        <DrifterStars color={starColor} />
       </FadeIn>
     ) : (
-      <DrifterStars color={useColorModeValue('#0293D5', 'white')} />
+      <DrifterStars color={starColor} />
     );
   }
 

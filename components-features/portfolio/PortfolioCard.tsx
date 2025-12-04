@@ -47,6 +47,9 @@ export default function PortfolioCard(props: Tables<'portfolio_items'>) {
 
   const executeDatabaseActionTimer = React.useRef<NodeJS.Timeout | null>(null);
 
+  const notLikedColor = useColorModeValue('gray.700', 'white');
+  const likedColor = useColorModeValue('primary.500', 'primary.200');
+
   // Get the total comments count
   React.useEffect(() => {
     (async () => {
@@ -57,6 +60,7 @@ export default function PortfolioCard(props: Tables<'portfolio_items'>) {
       setTotalComments(commentsCount);
       setCommentsCountLoading(false);
     })();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   /**
@@ -177,9 +181,12 @@ export default function PortfolioCard(props: Tables<'portfolio_items'>) {
 
       // If the action was successful
       if (success) {
-        userLikedItem
-          ? addLikedPortfolioItemToLocalStorage()
-          : removeLikedPortfolioItemFromLocalStorage();
+        if (userLikedItem) {
+          addLikedPortfolioItemToLocalStorage();
+        } else {
+          removeLikedPortfolioItemFromLocalStorage();
+        }
+
         setPreviouslyLikedValue(userLikedItem);
       }
     }, 2000);
@@ -278,11 +285,7 @@ export default function PortfolioCard(props: Tables<'portfolio_items'>) {
         >
           <AnimatedPressIn display="flex" flex={1} justifyContent="center">
             <Button
-              color={
-                !liked
-                  ? useColorModeValue('gray.700', 'white')
-                  : useColorModeValue('primary.500', 'primary.200')
-              }
+              color={!liked ? notLikedColor : likedColor}
               flex={1}
               leftIcon={<Icon as={liked ? BiSolidLike : BiLike} boxSize={6} />}
               onClick={handleLikeButtonClicked}

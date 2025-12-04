@@ -40,6 +40,7 @@ export default function Expertise() {
     setTotalCodingStatsTitle(i18n.t('total_hours_coding'));
 
     fetchCodingStats();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [store.locale]);
 
   /**
@@ -68,9 +69,11 @@ export default function Expertise() {
       // false, but if it wasn't, wait a bit to show the loading spinner for
       // the Statistic component so that the AnimatedNumber component updates
       // correctly (such as when the language is changed).
-      storeUpdated
-        ? setIsLoading(false)
-        : setTimeout(() => setIsLoading(false), 250);
+      if (storeUpdated) {
+        setIsLoading(false);
+      } else {
+        setTimeout(() => setIsLoading(false), 250);
+      }
     } catch (err) {
       console.error(err);
       setIsLoading(false);

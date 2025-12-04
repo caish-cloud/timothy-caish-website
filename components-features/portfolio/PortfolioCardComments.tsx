@@ -24,6 +24,7 @@ export default function PortfolioCardComments() {
   // Get the comments for the portfolio item
   React.useEffect(() => {
     fetchComments();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   /**
@@ -53,7 +54,11 @@ export default function PortfolioCardComments() {
   async function fetchComments(fetchAdditional = false) {
     if (!store.portfolioItemIdSelected) return;
 
-    fetchAdditional ? setIsLoadingMoreComments(true) : setIsLoading(true);
+    if (fetchAdditional) {
+      setIsLoadingMoreComments(true);
+    } else {
+      setIsLoading(true);
+    }
 
     // Get the comments for the portfolio item
     const response = await getPortfolioItemComments(
@@ -63,7 +68,12 @@ export default function PortfolioCardComments() {
 
     // If there was an error loading the comments
     if (response.error) {
-      fetchAdditional ? setIsLoadingMoreComments(false) : setIsLoading(false);
+      if (fetchAdditional) {
+        setIsLoadingMoreComments(false);
+      } else {
+        setIsLoading(false);
+      }
+
       toast({
         description: i18n.t('error__loading_comments__desc'),
         isClosable: true,
@@ -89,7 +99,12 @@ export default function PortfolioCardComments() {
     });
 
     setComments(tempComments);
-    fetchAdditional ? setIsLoadingMoreComments(false) : setIsLoading(false);
+
+    if (fetchAdditional) {
+      setIsLoadingMoreComments(false);
+    } else {
+      setIsLoading(false);
+    }
   }
 
   return (
@@ -107,8 +122,8 @@ export default function PortfolioCardComments() {
           ) : (
             <Stack spacing={3}>
               {comments.map((comment, index) => (
-                <React.Fragment>
-                  <PortfolioCardComment key={comment.id} {...comment} />
+                <React.Fragment key={comment.id}>
+                  <PortfolioCardComment {...comment} />
 
                   {index === comments.length - 1 &&
                     comments.length % CONTENT_SIZE_LIMIT === 0 && (

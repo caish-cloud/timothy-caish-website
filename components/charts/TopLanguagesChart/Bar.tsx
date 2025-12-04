@@ -40,11 +40,15 @@ export default function Bar(props: {
       setHeight(targetRef.current.offsetHeight);
       width.set(targetRef.current.offsetWidth);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // Update the width of the bar on window resize
   React.useEffect(() => {
-    targetRef.current && width.set(targetRef.current.offsetWidth);
+    if (targetRef.current) {
+      width.set(targetRef.current.offsetWidth);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [store.windowWidth]);
 
   return (

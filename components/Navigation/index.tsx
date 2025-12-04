@@ -6,8 +6,6 @@ import LanguagesMenu from '@/components/LanguagesMenu';
 import NavigationDrawer from '@/components/Navigation/Drawer';
 import AnimatedPressIn from '@/components/animation/AnimatedPressIn';
 import { Routes } from '@/constants/routes';
-import { i18n } from '@/services/localization';
-import { useStore } from '@/zustand/store';
 import { Image, Link } from '@chakra-ui/next-js';
 import {
   Box,
@@ -35,15 +33,9 @@ export default function NavigationBar() {
   const { colorMode, toggleColorMode } = useColorMode();
   const mobileNavbarDisclosure = useDisclosure();
   const routes = Routes();
-  const store = useStore();
   const { theme, setTheme } = useTheme();
 
-  const [inDevText, setInDevText] = React.useState(i18n.t('in_development'));
-
-  // Set the in development text when the locale changes
-  React.useEffect(() => {
-    setInDevText(i18n.t('in_development'));
-  }, [store.locale]);
+  const linkTextColor = useColorModeValue('gray.700', 'gray.300');
 
   // Function to handle changing the color mode
   function handleChangeColorMode() {
@@ -85,10 +77,7 @@ export default function NavigationBar() {
                   .map((route) => (
                     <Link href={route.path} key={route.name}>
                       <AnimatedPressIn>
-                        <Text
-                          color={useColorModeValue('gray.700', 'gray.300')}
-                          fontWeight="semibold"
-                        >
+                        <Text color={linkTextColor} fontWeight="semibold">
                           {route.name}
                         </Text>
                       </AnimatedPressIn>

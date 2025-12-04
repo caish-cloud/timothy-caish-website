@@ -22,7 +22,7 @@ export default function TopEditorsChart(props: TopEditorsChartProps) {
     // Create the echarts instance
     if (typeof document !== 'undefined') {
       chartRef.current = echarts.init(
-          document.getElementById('top-editors-chart')
+        document.getElementById('top-editors-chart')
       );
     }
   }, [store.wakatimeStats?.data.editors]);
@@ -56,7 +56,7 @@ export default function TopEditorsChart(props: TopEditorsChartProps) {
         }
       ]
     });
-  }, [chartRef.current, store.wakatimeStats?.data.editors, colorMode]);
+  }, [store.wakatimeStats?.data.editors, colorMode]);
 
   return (
     <ChartContainer

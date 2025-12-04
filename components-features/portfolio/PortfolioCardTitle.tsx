@@ -7,16 +7,15 @@ type PortfolioCardTitleProps = {
 };
 
 export default function PortfolioCardTitle(props: PortfolioCardTitleProps) {
+  const headingUrlColor = useColorModeValue('primary.500', 'primary.200');
+
   return props.learn_more_url ? (
     <Link
       href={props.learn_more_url}
       target="_blank"
       title={props.learn_more_url}
     >
-      <Heading
-        color={useColorModeValue('primary.500', 'primary.200')}
-        size="md"
-      >
+      <Heading color={headingUrlColor} size="md">
         {props.title}
       </Heading>
     </Link>

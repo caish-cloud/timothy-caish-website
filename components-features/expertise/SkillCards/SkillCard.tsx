@@ -53,7 +53,7 @@ export default function SkillCard(props: SkillCardProps) {
     setIsOtherCardHovered(
       store.skillCardIndexHovered != null && !isThisCardHoveredTemp
     );
-  }, [store.skillCardIndexHovered]);
+  }, [store.skillCardIndexHovered, props.index]);
 
   // Handle what happens when the user stops hovering over the card
   function handleOnHoverEnd() {

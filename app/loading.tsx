@@ -17,10 +17,3 @@ export default function Loading() {
     </PageContainer>
   );
 }
-
-const styles = {
-  loading_lottie: {
-    width: '100%',
-    height: '100%'
-  }
-};

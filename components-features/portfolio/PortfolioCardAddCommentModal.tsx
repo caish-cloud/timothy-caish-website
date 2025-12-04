@@ -53,6 +53,7 @@ export default function PortfolioCardAddCommentModal(
 
   const [isSubmitting, setIsSubmitting] = React.useState(false);
 
+  const modalBgColor = useColorModeValue('rgba(0, 0, 0, 0.1)', 'none');
   const portfolioItem = store.portfolioItems.find(
     (item) => item.id === store.portfolioItemIdSelected
   );
@@ -143,7 +144,7 @@ export default function PortfolioCardAddCommentModal(
       {!store.portfolioCardCommentsModalIsOpen && (
         <ModalOverlay
           backdropFilter="blur(10px) saturate(180%)"
-          bg={useColorModeValue('rgba(0, 0, 0, 0.1)', 'none')}
+          bg={modalBgColor}
         />
       )}
 
