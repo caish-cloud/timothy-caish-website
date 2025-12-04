@@ -1,4 +1,5 @@
 import { CONTENT_SIZE_LIMIT } from "@/constants/settings";
+import { Database } from "@/constants/types/supabase";
 import { supabaseClient } from "@/services/supabase";
 import Bugsnag from "@bugsnag/js";
 
@@ -36,7 +37,11 @@ export async function getPortfolioItemComments(
     return { error: true };
   } // If there was no error and data was returned
   else if (response.data.length > 0) {
-    lastVisibleCommentId = response.data[response.data.length - 1].id;
+    lastVisibleCommentId =
+      (response
+        .data as Database["public"]["Tables"]["portfolio_item_comments"][
+          "Row"
+        ][])[response.data.length - 1].id;
   }
 
   return {

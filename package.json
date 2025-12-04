@@ -12,7 +12,8 @@
     "supabase-deploy-all": "npx supabase secrets set --env-file ./supabase/.env && npx supabase functions deploy --debug",
     "supabase-start": "npx supabase start && npx supabase functions serve --env-file ./supabase/.env",
     "supabase-status": "npx supabase status",
-    "supabase-stop": "npx supabase stop"
+    "supabase-stop": "npx supabase stop",
+    "type-check": "tsc --noEmit"
   },
   "dependencies": {
     "@bugsnag/js": "^7.25.0",

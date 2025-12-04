@@ -10,6 +10,7 @@ export async function updatePortfolioItemTotalLikes(
 ) {
   if (action === "decrement") {
     const { error } = await supabaseClient
+      // @ts-expect-error `rpc` type is not correctly inferred
       .rpc("decrement_portfolio_item_likes", {
         id_of_portfolio_item: id,
       });
@@ -26,6 +27,7 @@ export async function updatePortfolioItemTotalLikes(
   }
 
   const { error } = await supabaseClient
+    // @ts-expect-error `rpc` type is not correctly inferred
     .rpc("increment_portfolio_item_likes", {
       id_of_portfolio_item: id,
     });

@@ -13,6 +13,7 @@ export async function addUniqueVisitor(hashedIpAddr: string) {
   if (!isUnique) return;
 
   // Add the unique visitor to the database
+  // @ts-expect-error `insert` type is not correctly inferred
   const { error } = await supabaseClient.from("unique_visitors").insert({
     hashed_ip: hashedIpAddr,
   });

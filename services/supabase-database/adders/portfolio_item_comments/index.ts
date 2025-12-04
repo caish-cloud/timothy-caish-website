@@ -11,6 +11,7 @@ export async function addPortfolioItemComment(
   const { error } = await supabaseClient
     .from("portfolio_item_comments")
     .insert(
+      // @ts-expect-error `insert` type is not correctly inferred
       data,
     );
 
